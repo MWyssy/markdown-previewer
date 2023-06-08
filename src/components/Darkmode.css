@@ -1,0 +1,35 @@
+#dark-mode {
+    font-size: 2rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border: var(--dark) 7px solid;
+    background-color: var(--light);
+    color: var(--dark);
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+
+#dark-mode:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+  
+
+@media (min-width: 0px) {  
+
+    #dark-mode {
+    }
+
+}
+@media (min-width: 640px) {
+
+    #dark-mode {
+    }
+}
+@media (min-width: 1080px) {
+
+    #dark-mode {
+    }
+}

@@ -1,0 +1,33 @@
+h1 {
+    color: var(--dark);
+    font-family: 'Teko', sans-serif;
+    font-weight: regular;
+    font-size: 3.5rem
+}
+
+#title {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  left: 10%;
+  top: 0;
+  height: 10%;
+}
+
+@media (min-width: 0px) {  
+    h1 {
+      
+    }
+  }
+  
+  @media (min-width: 640px) {
+    h1 {
+      
+    }
+  }
+  
+  @media (min-width: 1080px) {
+    h1 {
+      
+    }
+  }
