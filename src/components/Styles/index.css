@@ -23,4 +23,6 @@ html {
     --dark-view: rgb(72, 72, 72);
     --light: rgb(242, 242, 240);
     --light-view: rgb(255, 255, 255);
+    --left-column-width: 50%;
+    --right-column-width: 50%;
 }
