@@ -1,10 +1,21 @@
-import './Preview.css'
+import './Styles/Preview.css'
+import { marked } from 'marked'
+import parse from 'html-react-parser'
 
-function Preview() {
+function Preview({ markDown }) {
+    
+    marked.use({
+        pedantic: false,
+        gfm: true,
+        breaks: true,
+        sanitize: false,
+        smartypants: false,
+        xhtml: false 
+    })
 
     return (
         <section id='preview'>
-            <h2>Hi, I'm the Previewer!</h2>
+            {parse(marked.parse(markDown))}
         </section>
     )
 }

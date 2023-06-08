@@ -1,18 +1,16 @@
-import './App.css'
+import './components/Styles/App.css'
 import Title from './components/Title'
-import Editor from './components/Editor'
-import Preview from './components/Preview'
+import Body from './components/Body'
 import Darkmode from './components/Darkmode'
 
+
 function App() {
+
   return (
     <>
       <Darkmode/>
       <Title/>
-      <section id='body'>
-        <Editor/>
-        <Preview/>
-      </section>
+      <Body/>
     </>
   )
 }

@@ -1,10 +1,10 @@
-import './Title.css'
+import './Styles/Title.css'
 
 function Title() {
 
     return (
         <section id='title'>
-            <h1>Hi, I'm the Title!</h1>
+            <h1>Mike's Markdown Previewer</h1>
         </section>
     )
 }
