@@ -3,6 +3,12 @@ import Editor from './Editor'
 import Slider from './Slider'
 import Preview from './Preview'
 import { useState } from "react"
+import {
+    ResizeContent,
+    ResizeHandleLeft,
+    ResizeHandleRight,
+    ResizePanel
+} from 'react-hook-resize-panel'
 
 function Body() {
     const [markDown, setMarkdown] = useState(
@@ -54,26 +60,17 @@ And here. | Okay. | I think we get it.
 ## Create by **Mike Wyss**
         `
     )
-    const [sliderPosition, setSliderPosition] = useState(50)
-
-    const updateColumnSizes = (position) => {
-        const leftColumnWidth = position + '%';
-        const rightColumnWidth = 100 - position + '%';
-
-        document.documentElement.style.setProperty('--left-column-width', leftColumnWidth)
-        document.documentElement.style.setProperty('--right-column-width', rightColumnWidth)
-    }
-
-    const handleSliderChange = (event) => {
-        const position = parseInt(event.target.value, 10);
-        setSliderPosition(position);
-        updateColumnSizes(position)
-    }
 
     return (
         <section id='body'>
-            <Editor setMarkdown={setMarkdown} markDown={markDown}/>
-            <Slider handleSliderChange={handleSliderChange} sliderPosition={sliderPosition} />
+            <ResizePanel initialWidth={800}>
+                <ResizeContent style={{ height: "90%" }}>
+                    <Editor setMarkdown={setMarkdown} markDown={markDown}/>
+                </ResizeContent>
+                <ResizeHandleRight>
+                    <Slider />
+                </ResizeHandleRight>
+            </ResizePanel>
             <Preview markDown={markDown}/>
         </section>
     )

@@ -1,7 +1,7 @@
 import './Styles/Editor.css'
 import { useState } from "react"
 
-function Editor({setMarkdown, markDown}) {
+function Editor({setMarkdown, markDown, layout}) {
     const [input, setInput] = useState(markDown)
 
     function handleChange(event) {

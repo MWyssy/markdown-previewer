@@ -2,7 +2,7 @@ import './Styles/Preview.css'
 import { marked } from 'marked'
 import parse from 'html-react-parser'
 
-function Preview({ markDown }) {
+function Preview({ markDown, layout }) {
     
     marked.use({
         pedantic: false,
