@@ -1,7 +1,7 @@
 import './Styles/Editor.css'
 import { useState } from "react"
 
-function Editor({setMarkdown, markDown, layout}) {
+function Editor({setMarkdown, markDown, viewPortHeight}) {
     const [input, setInput] = useState(markDown)
 
     function handleChange(event) {
@@ -10,7 +10,7 @@ function Editor({setMarkdown, markDown, layout}) {
     }
 
     return (
-        <section id='editor-input'>
+        <section id='editor-input' style={{ height: viewPortHeight }}>
             <textarea id='editor' value={input} onChange={handleChange}/>
         </section>
         )

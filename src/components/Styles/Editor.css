@@ -20,30 +20,45 @@ h2 {
 }
 
 #editor-input {
-    /* width: 97.5%; */
-    height: 100%;
-    margin: 5% 0 1% 1%;
-    padding: 10px 0 0 10px;
+    width: 100%;
+    margin: 0% 0 1% 1%;
+    padding: 0 0 0 15px;
     background-color: var(--light-view);
     border: 1px var(--dark) solid;
     border-radius: 10px 0 0 10px;
-    box-shadow: inset -2px 2px 25px 1px rgb(193, 193, 193);
+    box-shadow: inset -2px 2px 25px 1px rgb(193, 193, 193); 
+    resize: horizontal;
 }
 
 @media (min-width: 0px) {  
-    h2 {
-        font-size: 1.5rem;
+    #editor-input {
+    font-size: 1.5rem;
     }
-}
+  }
+  
+  @media (min-height: 400px) {
+    #editor-input {
+      margin-top: 5%;
+    }
+  }
 
-@media (min-width: 640px) {
-    h2 {
-        font-size: 2rem;
+  @media (orientation: portrait) {
+    #editor-input {
+      margin-top: 10%;
+      width: 93%;
+      resize: vertical;
+      border-radius: 10px 10px 0 0;
     }
-}
-
-@media (min-width: 1080px) {
-    h2 {
-        font-size: 2.5rem;
+  }
+    
+    @media (min-width: 640px) {
+    #editor-input {
+      font-size: 2rem;
     }
-}
+  }
+    
+    @media (min-width: 1080px) {
+    #editor-input {
+      font-size: 2.5rem;
+    }
+  }

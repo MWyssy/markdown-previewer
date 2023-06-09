@@ -4,9 +4,17 @@
     justify-content: center;
     margin-top: 5%;
     margin-bottom: 1%;
-    width: 100%;
+    width: 1%;
     text-align: center;
     cursor: col-resize;
     color: var(--dark);
     height: 100%;
 }
+
+@media (orientation: portrait) {
+    #slider {
+      width: 100%;
+      height: 0.5%;
+      padding: 0;
+    }
+  }

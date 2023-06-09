@@ -3,12 +3,7 @@ import Editor from './Editor'
 import Slider from './Slider'
 import Preview from './Preview'
 import { useState } from "react"
-import {
-    ResizeContent,
-    ResizeHandleLeft,
-    ResizeHandleRight,
-    ResizePanel
-} from 'react-hook-resize-panel'
+import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels"
 
 function Body() {
     const [markDown, setMarkdown] = useState(
@@ -61,17 +56,12 @@ And here. | Okay. | I think we get it.
         `
     )
 
+    const viewPortHeight = screen.orientation === 'portrait' ? screen.height * 0.39 : screen.height * 0.78
     return (
         <section id='body'>
-            <ResizePanel initialWidth={800}>
-                <ResizeContent style={{ height: "90%" }}>
-                    <Editor setMarkdown={setMarkdown} markDown={markDown}/>
-                </ResizeContent>
-                <ResizeHandleRight>
-                    <Slider />
-                </ResizeHandleRight>
-            </ResizePanel>
-            <Preview markDown={markDown}/>
+            <Editor setMarkdown={setMarkdown} markDown={markDown} viewPortHeight={viewPortHeight}/>
+            <Slider />
+            <Preview markDown={markDown} viewPortHeight={viewPortHeight}/>  
         </section>
     )
 }

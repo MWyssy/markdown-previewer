@@ -2,8 +2,8 @@
 #preview {
   font-family: 'Teko', sans-serif;
   font-weight: regular;
-  width: 97.5%;
-  margin: 5% 1% 1% 0;
+  width: 98%;
+  margin: 0 1% 1% 0;
   padding: 0 0 0 10px;
   background-color: var(--light-view);
   border: 1px var(--dark) solid;
@@ -12,6 +12,8 @@
   color: var(--dark);
   font-size: 1.75rem;
   overflow-y: scroll;
+  flex-wrap: wrap;
+  resize: horizontal;
 }
 
 table {
@@ -38,11 +40,6 @@ pre {
   margin-right: 10px;
 }
 
-code {
-  background-color: var(--dark-view);
-  color: var(--light);
-}
-
 blockquote{
   border-left: 7.5px var(--dark) solid;
   border-radius: 5px;
@@ -50,19 +47,45 @@ blockquote{
 }
 
 @media (min-width: 0px) {  
-  h2 {
-    font-size: 2rem;
+  #preview {
+  font-size: 1.0rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-height: 400px) {
+  #preview {
+    margin-top: 5%;
+  }
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (orientation: portrait) {
+  #preview {
+    margin-top: 10%;
+    width: 96%;
+    resize: vertical;
+    border-radius: 0 0 10px 10px;
+    margin-left: 2%;
+    padding: 0;
   }
 }
   
   @media (min-width: 640px) {
-  h2 {
-    font-size: 2.5rem;
+  #preview {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 3rem;
   }
 }
   
   @media (min-width: 1080px) {
-  h2 {
-    font-size: 3rem;
+  #preview {
+    font-size: 2.5rem;
   }
 }

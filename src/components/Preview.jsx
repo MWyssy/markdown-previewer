@@ -2,7 +2,7 @@ import './Styles/Preview.css'
 import { marked } from 'marked'
 import parse from 'html-react-parser'
 
-function Preview({ markDown, layout }) {
+function Preview({ markDown, viewPortHeight }) {
     
     marked.use({
         pedantic: false,
@@ -14,7 +14,7 @@ function Preview({ markDown, layout }) {
     })
 
     return (
-        <section id='preview'>
+        <section id='preview' style={{ height: viewPortHeight }}>
             {parse(marked.parse(markDown))}
         </section>
     )
